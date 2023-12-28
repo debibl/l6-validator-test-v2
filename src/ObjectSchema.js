@@ -13,7 +13,7 @@ export default class ObjectSchema {
   }
 
   validateObject(data, schema) {
-    for (const key in schema) {
+    for (const key of Object.keys(schema)) {
       const validator = schema[key];
 
       if (typeof validator === 'object' && validator !== null) {
